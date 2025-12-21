@@ -3,10 +3,11 @@ import { Order } from '../models/Order.js';
 import { Product } from '../models/Product.js';
 import { DeliveryOption } from '../models/DeliveryOption.js';
 import { CartItem } from '../models/CartItem.js';
+import { auth } from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/',auth, async (req, res) => {
   const expand = req.query.expand;
   let orders = await Order.unscoped().findAll({ order: [['orderTimeMs', 'DESC']] }); // Sort by most recent
 

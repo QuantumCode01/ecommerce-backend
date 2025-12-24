@@ -3,3 +3,7 @@ database.sqlite
 *.zip
 dist
 .DS_Store
+# Environment variables
+.env
+.env.*
+!.env.example

@@ -175,7 +175,7 @@ router.post("/forgot-password", async (req, res) => {
     await user.save();
 console.log("User saved with reset token");
     const resetLink = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
- console.log("Reset link:", resetLink);
+ console.log("Reset link new:", resetLink);
     // const transporter = nodemailer.createTransport({
     //   service: "gmail",
     //   auth: {
